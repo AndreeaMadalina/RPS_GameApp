@@ -21,7 +21,7 @@ namespace Player
 			Console.WriteLine($"Select your move (type the move number): ");
 			for (int i = 0; i < moves.Count; i++)
 			{
-				Console.WriteLine($"{i}: {moves[i]}");
+				Console.WriteLine($"{i+1}: {moves[i].MoveName}");
 			}
 
 			
@@ -29,14 +29,14 @@ namespace Player
 			int moveNo = -1;
 			int.TryParse(playerResponse, out moveNo);
 
-			while (moveNo == -1 || moveNo > moves.Count - 1)
+			while (moveNo - 1 == -1 || moveNo - 1 > moves.Count - 1)
 			{
 				Console.WriteLine("Please select a correct number!");
 				playerResponse = Console.ReadLine();
 				int.TryParse(playerResponse, out moveNo);
 			}
 
-			Move = moves[moveNo];
+			Move = moves[moveNo - 1];
 		}
 	}
 }

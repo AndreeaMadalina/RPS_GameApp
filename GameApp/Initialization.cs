@@ -24,21 +24,21 @@ namespace GameApp
 			Console.WriteLine($"Select your match (type the match number): ");
 			for (int i = 0; i < matchGames.Count; i++)
 			{
-				Console.WriteLine($"{i}: {matchGames[i]}");
+				Console.WriteLine($"{i+1}: Number of games {matchGames[i].NumberOfGames}");
 			}
 
 			string playerResponse = Console.ReadLine();
 			int matchNo = -1;
 			int.TryParse(playerResponse, out matchNo);
 
-			while (matchNo == -1 || matchNo > matchGames.Count - 1)
+			while (matchNo - 1 == -1 || matchNo - 1 > matchGames.Count - 1)
 			{
 				Console.WriteLine("Please select a correct number!");
 				playerResponse = Console.ReadLine();
 				int.TryParse(playerResponse, out matchNo);
 			}
 
-			return matchGames[matchNo];
+			return matchGames[matchNo - 1];
 		}
 
 		public static Player.Player SelectOpponent(List<Player.Player> players)
@@ -46,7 +46,7 @@ namespace GameApp
 			Console.WriteLine($"Select your oponent (type the oponent number): ");
 			for (int i = 1; i < players.Count; i++)
 			{
-				Console.WriteLine($"{i}: {players[i]}");
+				Console.WriteLine($"{i}: {players[i].PlayerName}");
 			}
 
 			string playerResponse = Console.ReadLine();
