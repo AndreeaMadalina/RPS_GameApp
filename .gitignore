@@ -1,0 +1,10 @@
+.vs/GameApp/DesignTimeBuild/.dtbcache.v2
+.vs/
+GameApp/bin/
+GameApp/obj/
+Match/bin/
+Match/obj/
+Player/bin/
+Player/obj/
+RPS_Game/bin/
+RPS_Game/obj/
